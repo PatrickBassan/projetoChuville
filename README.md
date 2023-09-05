@@ -1,7 +1,7 @@
 # Projeto Chuville
 
 ## Descrição
-A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção contra alagamentos, utilizando sensores de profundidade em rios em conjunto com arduino.
+A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção contra alagamentos, utilizando sensores de profundidade em rios em conjunto com arduino. Como os sensores de profundidade, dados do rio sáo processados e enviados para cloud, onde junto de dados de outras fontes, serão analisados com o auxílio técnicas de aprendizagem de máquina, a fim de detectar anomalias no nível do rio calcular a probabilidade de alagamento. Através de mensagens para um bot no aplicativo do telegram, assim como através de uma página web, é possível realizar consultas a respeito da predição para um determinado CEP e horário.
 
 ## Stack/Tecnologias
 - Front-end: React
