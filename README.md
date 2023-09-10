@@ -4,8 +4,10 @@
 A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção contra alagamentos, utilizando sensores de profundidade em rios em conjunto com arduino. Como os sensores de profundidade, dados do rio sáo processados e enviados para cloud, onde junto de dados de outras fontes, serão analisados com o auxílio técnicas de aprendizagem de máquina, a fim de detectar anomalias no nível do rio calcular a probabilidade de alagamento. Através de mensagens para um bot no aplicativo do telegram, assim como através de uma página web, é possível realizar consultas a respeito da predição para um determinado CEP e horário.
 
 ## Stack/Tecnologias
-- Front-end: React
-- Back-end: PHP, Python
+- React: Utilizado para o front-end da página web
+- PHP: Utilizado para o back-end da página web
+- Python: Utilizado para aprendizagem de máguina do algoritmo de predição de alagamentos
+- Javascript: Utilizado no Arduino
 - Banco de dados: MySQL
 - Servidor: AWS
 
