@@ -12,22 +12,22 @@ A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção
 - Servidor: AWS
 
 ## Documentação
-Para visualizar a documentação completa, verifique a [wiki](https://github.com/PatrickBassan/projetoChuville/wiki) do projeto.
+Para visualizar a documentação completa, verifique a [wiki](https://github.com/PatrickBassan/projetoChuville/wiki/Documenta%C3%A7%C3%A3o) do projeto.
 
 ## Instalação
-W.I.P.
+`WIP`
 
 ## Uso
-W.I.P.
+`WIP`
 
 ## Contribuição
-Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki) caso deseje ajudar com o projeto.
+Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki/Guia-de-Contribui%C3%A7%C3%A3o) caso deseje ajudar com o projeto.
 
 ## Licença
 O projeto Chuville é disponibilizado sob a [licença Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ## Autores e Agradecimentos
-W.I.P.
+`WIP`
 
 ## Contato
 Para contato, envie um e-mail para: patrickfbassan@gmail.com
