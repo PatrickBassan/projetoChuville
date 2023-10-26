@@ -42,15 +42,7 @@ function ConsultPage() {
   }
   
   const handleSearch = async (cep, time) => {
-    try {
-      const res = await axios.get("http://localhost:8800");
-      let list = res.data.sort((a, b) => (a.cdregion > b.cdregion ? 1 : -1));
-      list = list.map(a => ({ prediction: a.cdregion, cep: a.cepregion }));
-      setResult(list);
-      setShowResults(true);
-    } catch (error) {
       setShowEmpty(true);
-    }
   }
   
   useEffect(() => {
