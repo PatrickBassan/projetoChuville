@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Select from "react-select";
-import './ConsultPage.css';
+import './styles/ConsultPage.css';
 import { FiSearch } from 'react-icons/fi';
 import { GoAlert } from 'react-icons/go';
 import axios from 'axios';
