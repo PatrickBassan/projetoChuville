@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/", regionsRoutes);
+app.use("/regions", regionsRoutes);
 
-app.use("/", forecastRoutes);
+app.use("/forecast", forecastRoutes);
 
 app.listen(8800);
