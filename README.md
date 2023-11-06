@@ -5,7 +5,7 @@ A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção
 
 ## Stack/Tecnologias
 - React: Utilizado para o front-end da página web
-- PHP: Utilizado para o back-end da página web
+- Node: Utilizado para o back-end da página web
 - Python: Utilizado para aprendizagem de máguina do algoritmo de predição de alagamentos
 - Javascript: Utilizado para programar o Arduino e sensores
 - Banco de dados: MySQL
