@@ -18,7 +18,10 @@ Para visualizar a documentação completa, verifique a [wiki](https://github.com
 `WIP`
 
 ## Uso
-`WIP`
+### Página de Consulta de previsões
+![consultar prev](https://github.com/PatrickBassan/projetoChuville/assets/61787168/297173cd-91e7-4631-9f56-1e8c7949c1c8)
+### Página de gestão das previsões
+![remover previsoes](https://github.com/PatrickBassan/projetoChuville/assets/61787168/93d99e6a-36d8-406f-a39b-21e8662e47f2)
 
 ## Contribuição
 Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki/Guia-de-Contribui%C3%A7%C3%A3o) caso deseje ajudar com o projeto.
