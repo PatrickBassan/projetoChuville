@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { getPeriodTerm } from "../helpers/fgperiodhelper.js"
 
 const Table = styled.table`
   width: 100%;
@@ -41,19 +42,24 @@ export const Td = styled.td`
   }
 `;
 
-const Grid = ({ users, setUsers, setOnEdit }) => {
+const Grid = ({ forecasts, setForecasts, setOnEdit }) => {
   const handleEdit = (item) => {
     setOnEdit(item);
   };
 
-  const handleDelete = async (id) => {
-    await axios
-      .delete("http://localhost:8800/" + id)
+  const handleDelete = async (cd) => {
+    await axios.delete("http://localhost:8800/forecast", {
+      params: {
+        cd
+      },
+    })
       .then(({ data }) => {
-        const newArray = users.filter((user) => user.id !== id);
+        const newArray = forecasts.filter((user) => user.cd !== cd);
 
-        setUsers(newArray);
+        setForecasts(newArray);
         toast.success(data);
+        // to-do: recarregar somente a grid
+        window.location.reload()
       })
       .catch(({ data }) => toast.error(data));
 
@@ -64,26 +70,30 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
     <Table>
       <Thead>
         <Tr>
-          <Th>Nome</Th>
-          <Th>Email</Th>
-          <Th onlyWeb>Fone</Th>
+          <Th>CEP</Th>
+          <Th>Previsão</Th>
+          <Th onlyWeb>Período</Th>
+          <Th onlyWeb>Data</Th>
           <Th></Th>
           <Th></Th>
         </Tr>
       </Thead>
       <Tbody>
-        {users.map((item, i) => (
+        {forecasts.map((item, i) => (
           <Tr key={i}>
             <Td width="30%">{item.cepregion}</Td>
-            <Td width="30%">{item.fgperiod}</Td>
+            <Td width="30%">{Math.floor(item.probability)}%</Td>
             <Td width="20%" onlyWeb>
-              {item.dtstart}
+              {getPeriodTerm(item.fgperiod)}
+            </Td>
+            <Td width="20%" onlyWeb>
+              {item.dtstart.split('T')[0]}
             </Td>
             <Td alignCenter width="5%">
               <FaEdit onClick={() => handleEdit(item)} />
             </Td>
             <Td alignCenter width="5%">
-              <FaTrash onClick={() => handleDelete(item.id)} />
+              <FaTrash onClick={() => handleDelete(item.cdforecast)} />
             </Td>
           </Tr>
         ))}
