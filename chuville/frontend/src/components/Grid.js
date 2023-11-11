@@ -59,7 +59,9 @@ const Grid = ({ forecasts, setForecasts, setOnEdit }) => {
         setForecasts(newArray);
         toast.success(data);
         // to-do: recarregar somente a grid
-        window.location.reload()
+        setTimeout(() => {
+          window.location.reload()
+        }, 1000);
       })
       .catch(({ data }) => toast.error(data));
 
