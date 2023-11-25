@@ -1,8 +1,8 @@
-import express from "express";
-import { getRegions } from "../controllers/regions.js";
+import express from "express"
+import { getRegions } from "../controllers/regions.js"
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/", getRegions);
+router.get("/", getRegions)
 
-export default router;
+export default router

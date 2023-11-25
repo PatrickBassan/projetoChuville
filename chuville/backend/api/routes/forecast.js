@@ -1,12 +1,16 @@
-import express from "express";
-import { getPredictions, getForecasts, deleteForecast } from "../controllers/forecast.js";
+import express from "express"
+import { getPredictions, getForecasts, deleteForecast, insertForecast, updateForecast } from "../controllers/forecast.js"
 
-const router = express.Router();
+const router = express.Router()
 
-router.get("/", getPredictions);
+router.get("/", getPredictions)
 
-router.get("/forecasts", getForecasts);
+router.get("/forecasts", getForecasts)
 
 router.delete("/", deleteForecast)
 
-export default router;
+router.post("/", insertForecast)
+
+router.put("/", updateForecast)
+
+export default router

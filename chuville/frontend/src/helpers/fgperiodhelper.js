@@ -1,21 +1,21 @@
 export function getPeriodTerm(fgperiod) {
-    let period = '';
+    let period = ''
     switch (fgperiod) {
-        case 0:
-            period = 'Manhã';
-            break;
         case 1:
-            period = 'Tarde';
-            break;
+            period = 'Manhã'
+            break
         case 2:
-            period = 'Noite';
+            period = 'Tarde'
             break
         case 3:
-            period = 'Madrugada';
+            period = 'Noite'
+            break
+        case 4:
+            period = 'Madrugada'
             break
         default:
-            break;
+            break
     }
 
-    return period;
-};
+    return period
+}
