@@ -5,14 +5,14 @@ import { toast, ToastContainer } from 'react-toastify'
 import { getPeriodTerm } from "./helpers/fgperiodhelper.js"
 import Select from "react-select"
 import axios from 'axios'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 import './styles/ConsultPage.css'
+import Input from "./components/FormComponents/Input.js"
+
 
 function ConsultPage() {
     const [cep, setCep] = useState('')
     const [cepOptions, setCepOptions] = useState([])
-    const [date, setDate] = useState(new Date())
+    const [date, setDate] = useState('')
     const [time, setTime] = useState('')
     const [showResults, setShowResults] = useState(false)
     const [showEmpty, setShowEmpty] = useState(false)
@@ -38,8 +38,13 @@ function ConsultPage() {
     const handleCepChange = (selectedOption) => {
         setCep(selectedOption)
     }
+
     const handleTimeChange = (selectedOption) => {
         setTime(selectedOption)
+    }
+    
+    const handleDateChange = (event) => {
+        setDate(event.target.value )
     }
 
     const handleResult = (show) => {
@@ -47,20 +52,18 @@ function ConsultPage() {
         setShowResults(show)
     }
 
-    const handleSearch = async (cdregion, time, date) => {
+    const handleSearch = async (cdregion, time, dtstart) => {
 
-        if (!cdregion || !time || !date) {
+        if (!cdregion || !time || !dtstart) {
             return toast.warn("Preencha todos os campos!")
         }
-
-        let dtstart = date.toISOString().split('T')[0]
 
         try {
             const res = await axios.get("http://localhost:8800/forecast", {
                 params: {
-                cdregion,
-                time,
-                dtstart
+                    cdregion,
+                    time,
+                    dtstart
                 },
             })
 
@@ -73,7 +76,7 @@ function ConsultPage() {
             toast.success("Sucesso")
         } catch (error) {
             handleResult(false)
-            toast.error("Erro na consulta")
+            toast.error("Ocorreu um erro inesperado ao consultar")
         }
     }
 
@@ -86,9 +89,9 @@ function ConsultPage() {
             <h1 className='title'>Chuville</h1>
             <h3 className='subtitle'> Selecione o CEP, dia e período que deseja consultar a previsão de alagamento</h3>
             <div className="containerInput">
-                <Select className="select" options={cepOptions} onChange={handleCepChange} placeholder={"CEP"} />
-                <DatePicker className="datePicker" selected={date} onChange={(date) => setDate(date)} dateFormat="dd/MM/yyyy" />
-                <Select className="select" options={timeOptions} onChange={handleTimeChange} placeholder={"Período"}/>
+                <Select className="select" id="cepSel" options={cepOptions} onChange={handleCepChange} placeholder={"CEP"} />
+                <Input className="select" id="dateSel" name="dtstart" type="date" onChange={handleDateChange} />
+                <Select className="select" id="timeSel" options={timeOptions} onChange={handleTimeChange} placeholder={"Período"}/>
                 <button className='buttonSearch'>
                     <FiSearch size={25} color="#FFF" onClick={() => handleSearch(cep.value, time.value, date)}/>
                 </button>
