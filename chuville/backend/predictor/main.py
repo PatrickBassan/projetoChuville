@@ -1,48 +1,50 @@
-import pickle
-import mysql.connector
+"""Modulo que fornece a previsão de alagamento"""
 from datetime import date
+import pickle
 import random
+import mysql.connector
 import requests
 
-# Carreega o modelo preditor
+# Carrega o modelo preditor
 with open('predictorModel', 'rb') as f:
     predictor = pickle.load(f)
 
 # Requisição para a API meteorológica
-response = requests.get('https://api.hgbrasil.com/weather?woeid=455873&fields=only_results,rain,moon_phase&key=226c4975')
+response = requests.get(
+    'https://api.hgbrasil.com/weather?woeid=455873&fields=only_results,rain,moon_phase&key=226c4975'
+)
 
 # Contador para realizar predição para cada período do dia
-times = 1
+Times = 1
 
-while times != 5:
+while Times != 5:
     try:
         result = response.json()
 
         moon_phase = result['moon_phase']
         if moon_phase == 'new':
-            moon = 1
+            Moon = 1
         elif moon_phase == 'waxing_crescent':
-            moon = 2
+            Moon = 2
         elif moon_phase == 'first_quarter':
-            moon = 2
+            Moon = 2
         elif moon_phase == 'waxing_gibbous':
-            moon = 2
+            Moon = 2
         elif moon_phase == 'full':
-            moon = 3
+            Moon = 3
         elif moon_phase == 'waning_gibbous':
-            moon = 4
+            Moon = 4
         elif moon_phase == 'last_quarter':
-            moon = 4
+            Moon = 4
         elif moon_phase == 'waning_crescent':
-            moon = 4
+            Moon = 4
         else:
-            moon = 0
+            Moon = 0
 
         sea = random.randint(0, 200)
-        rain = result['rain']
 
         try:
-            prediction = (predictor.predict([[rain, sea, moon]]))
+            prediction = (predictor.predict([[result['rain'], sea, Moon]]))
 
             conn = mysql.connector.connect(
                 host='localhost',
@@ -55,10 +57,10 @@ while times != 5:
             try:
                 probability = round(prediction[0], 2)
                 dtstart = date.today()
-                fgperiod = times
                 cdregion = random.randint(1, 200)
 
-                insert = f'INSERT INTO FORECAST (probability, dtstart, fgperiod, cdregion) VALUES ({probability}, "{dtstart}", {fgperiod}, {cdregion})'
+                insert = (f'INSERT INTO FORECAST (probability, dtstart, fgperiod, cdregion) VALUES '
+                          f'({probability}, "{dtstart}", {Times}, {cdregion})')
                 cursor.execute(insert)
                 conn.commit()
             except RuntimeError:
@@ -74,4 +76,4 @@ while times != 5:
     except KeyError:
         print(f"Erro na requisição da API HGWeather: {NameError}")
 
-    times += 1
+    Times += 1
