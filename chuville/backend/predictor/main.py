@@ -1,4 +1,6 @@
 """Modulo que fornece a previsão de alagamento"""
+# pylint: disable=E0401
+# pylint: disable=C0103
 from datetime import date
 import pickle
 import random
@@ -15,36 +17,36 @@ response = requests.get(
 )
 
 # Contador para realizar predição para cada período do dia
-Times = 1
+times = 1
 
-while Times != 5:
+while times != 5:
     try:
         result = response.json()
 
         moon_phase = result['moon_phase']
         if moon_phase == 'new':
-            Moon = 1
+            moon = 1
         elif moon_phase == 'waxing_crescent':
-            Moon = 2
+            moon = 2
         elif moon_phase == 'first_quarter':
-            Moon = 2
+            moon = 2
         elif moon_phase == 'waxing_gibbous':
-            Moon = 2
+            moon = 2
         elif moon_phase == 'full':
-            Moon = 3
+            moon = 3
         elif moon_phase == 'waning_gibbous':
-            Moon = 4
+            moon = 4
         elif moon_phase == 'last_quarter':
-            Moon = 4
+            moon = 4
         elif moon_phase == 'waning_crescent':
-            Moon = 4
+            moon = 4
         else:
-            Moon = 0
+            moon = 0
 
         sea = random.randint(0, 200)
 
         try:
-            prediction = (predictor.predict([[result['rain'], sea, Moon]]))
+            prediction = predictor.predict([[result['rain'], sea, moon]])
 
             conn = mysql.connector.connect(
                 host='localhost',
@@ -60,7 +62,7 @@ while Times != 5:
                 cdregion = random.randint(1, 200)
 
                 insert = (f'INSERT INTO FORECAST (probability, dtstart, fgperiod, cdregion) VALUES '
-                          f'({probability}, "{dtstart}", {Times}, {cdregion})')
+                          f'({probability}, "{dtstart}", {times}, {cdregion})')
                 cursor.execute(insert)
                 conn.commit()
             except RuntimeError:
@@ -76,4 +78,4 @@ while Times != 5:
     except KeyError:
         print(f"Erro na requisição da API HGWeather: {NameError}")
 
-    Times += 1
+    times += 1

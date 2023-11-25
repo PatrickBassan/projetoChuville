@@ -1,4 +1,6 @@
 """Modulo MLP Regressor"""
+# pylint: disable=E0401
+# pylint: disable=C0103
 import pickle
 import numpy as np
 import pandas as pd
