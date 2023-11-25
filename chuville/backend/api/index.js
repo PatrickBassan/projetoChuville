@@ -48,8 +48,8 @@ bot.onText(regex, (msg, match) => {
     bot.sendMessage(chatId, 'Consultando...')
 
     let valores = consulta.split(',')
-    let datePart = valores[1].split("/");
-    let dbDate = datePart[2] + "-" + datePart[0] + "-" + datePart[1];
+    let datePart = valores[1].split("/")
+    let dbDate = datePart[2] + "-" + datePart[0] + "-" + datePart[1]
 
     const q = "SELECT * FROM forecast INNER JOIN region ON (region.cdregion =  forecast.cdregion) WHERE region.cepregion = ? AND forecast.fgperiod = ? AND forecast.dtstart = ?"
     db.query(q, [valores[0], valores[2], dbDate], (err, data) => {

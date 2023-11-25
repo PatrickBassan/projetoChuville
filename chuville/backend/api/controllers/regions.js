@@ -1,11 +1,11 @@
-import { db } from "../db.js";
+import { db } from "../db.js"
 
 export const getRegions = (_, res) => {
-    const q = "SELECT * FROM region";
+    const q = "SELECT * FROM region"
 
     db.query(q, (err, data) => {
-        if (err) return res.json(err);
+        if (err) return res.json(err)
 
-        return res.status(200).json(data);
-    });
-};
+        return res.status(200).json(data)
+    })
+}
