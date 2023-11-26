@@ -1,4 +1,3 @@
-import GlobalStyle from "./styles/global"
 import Container from "./components/Container.js"
 import Title from "./components/Title.js"
 import Form from "./components/Form.js"
@@ -36,7 +35,6 @@ function App() {
                 <Grid setOnEdit={setOnEdit} forecasts={forecasts} setForecasts={setForecasts} />
             </Container>
             <ToastContainer autoClose={3000} position={toast.POSITION.BOTTOM_LEFT} />
-            <GlobalStyle />
         </>
     )
 }
