@@ -1,12 +1,15 @@
+"""Módulo de testes da função get_cep"""
 import unittest
 from unittest.mock import patch, MagicMock
 from main import get_cep
 
 
 class TestGetCep(unittest.TestCase):
+    """Classe de testes da função get_cep"""
 
     @patch('main.mysql.connector.connect')
     def test_get_cep_success(self, mock_connect):
+        """Função que testa a execução com sucesso da get_cep"""
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
         mock_conn.cursor.return_value = mock_cursor
@@ -22,7 +25,9 @@ class TestGetCep(unittest.TestCase):
             password='111111',
             database='chuville'
         )
-        mock_cursor.execute.assert_called_once_with("SELECT cepregion FROM region WHERE cdregion = '40'")
+        mock_cursor.execute.assert_called_once_with(
+            "SELECT cepregion FROM region WHERE cdregion = '40'"
+        )
         self.assertEqual(result, ('89220-070',))
 
 

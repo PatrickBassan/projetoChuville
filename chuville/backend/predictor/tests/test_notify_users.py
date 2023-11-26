@@ -1,13 +1,16 @@
+"""Módulo para testar função notify_users"""
 import unittest
 from unittest.mock import patch, MagicMock
 from main import notify_users
 
 
 class TestNotifyUsers(unittest.TestCase):
+    """Classe para testar função notify_users"""
 
     @patch('main.mysql.connector.connect')
     @patch('main.send_msg')
     def test_notify_users_success(self, mock_send_msg, mock_connect):
+        """Função para testar execução com sucesso da função notify_users"""
         mock_conn = MagicMock()
         mock_cursor = MagicMock()
         mock_conn.cursor.return_value = mock_cursor
@@ -23,7 +26,9 @@ class TestNotifyUsers(unittest.TestCase):
             password='111111',
             database='chuville'
         )
-        mock_cursor.execute.assert_called_once_with("SELECT chatid FROM user WHERE cdregion = 'codigo_da_regiao'")
+        mock_cursor.execute.assert_called_once_with(
+            "SELECT chatid FROM user WHERE cdregion = 'codigo_da_regiao'"
+        )
         mock_send_msg.assert_any_call('chatid1', 0.8, 'manha', 'codigo_da_regiao')
         mock_send_msg.assert_any_call('chatid2', 0.8, 'manha', 'codigo_da_regiao')
 
