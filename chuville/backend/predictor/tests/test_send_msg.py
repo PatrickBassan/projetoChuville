@@ -1,4 +1,7 @@
 """Módulo para testar função send_msg"""
+# pylint: disable=W0613
+# pylint: disable=R0801
+# pylint: disable=E0401
 import unittest
 from unittest.mock import patch
 import requests_mock
@@ -12,6 +15,7 @@ class TestSendMsg(unittest.TestCase):
     @patch('main.get_period_term')
     @patch('main.get_cep')
     def test_send_msg(self, mock_get_cep, mock_get_period_term, mock_requests_get):
+        """Função para envio de mensagem com sucesso"""
         mock_get_cep.return_value = ('12345',)
         mock_get_period_term.return_value = 'Manhã'
 
