@@ -18,6 +18,7 @@ Para visualizar a documentação completa, verifique a [wiki](https://github.com
 `WIP`
 
 ## Uso
+https://main--famous-wisp-98cb91.netlify.app/
 ### Página de Consulta de previsões
 ![consultar prev](https://github.com/PatrickBassan/projetoChuville/assets/61787168/297173cd-91e7-4631-9f56-1e8c7949c1c8)
 ### Página de gestão das previsões
