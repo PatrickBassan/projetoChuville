@@ -13,7 +13,7 @@ app.use(cors())
 app.use("/regions", regionsRoutes)
 app.use("/forecast", forecastRoutes)
 
-app.listen(process.env.PORT || PORT)
+app.listen(8800)
 
 const token = '6340610289:AAFOptmbS9hWt-bWwA6dOFRDss4qNy84G1w'
 const bot = new TelegramBot(token, { polling: true })
