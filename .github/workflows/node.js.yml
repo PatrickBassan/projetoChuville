@@ -23,10 +23,9 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
+        context: ./chuville/frontend
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: |
-        cd chuville/frontend
-        npm ci
+    - run: npm ci
     - run: npm run build --if-present
     - run: npm test
