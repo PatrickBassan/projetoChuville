@@ -1,6 +1,4 @@
 """Modulo que fornece a previsão de alagamento"""
-# pylint: disable=E0401
-# pylint: disable=C0103
 from datetime import date
 import pickle
 import random

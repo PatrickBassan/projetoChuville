@@ -1,7 +1,4 @@
 """Módulo para testar função send_msg"""
-# pylint: disable=W0613
-# pylint: disable=R0801
-# pylint: disable=E0401
 import unittest
 from unittest.mock import patch
 import requests_mock

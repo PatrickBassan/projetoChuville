@@ -1,5 +1,4 @@
 """Módulo para testar função insert_forecast"""
-# pylint: disable=C0209
 import unittest
 from unittest.mock import patch, MagicMock
 from datetime import date
