@@ -25,9 +25,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: cd chuville/frontend
     - run: npm ci
-      working-directory: ${{ github.workspace }}/../chuville/frontend
     - run: npm run build --if-present
-      working-directory: ${{ github.workspace }}/../chuville/frontend
     - run: npm test
-      working-directory: ${{ github.workspace }}/../chuville/frontend
