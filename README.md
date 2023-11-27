@@ -55,8 +55,11 @@ Contribuições são bem-vindas, leia o [guia de contribuições](https://github
 ## Licença
 O projeto Chuville é disponibilizado sob a [licença Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
-## Autores e Agradecimentos
-`WIP`
+## Agradecimentos
+Gostaria de deixar aqui meu agradecimento aos professores que auxiliaram ao longo do desenvolvimento do projeto:
+- Diogo Vinícius Winck - No planejamento do projeto, discussão de ideias, entre outros.
+- Ricardo Lopes Bez Fontana - Na elaboração dos digramas e definição da arquitetura do projeto.
+- Luiz Carlos Camargo - Na elaboração do modelo preditor.
 
 ## Contato
 Para contato, envie um e-mail para: patrickfbassan@gmail.com
