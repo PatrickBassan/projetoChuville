@@ -9,21 +9,46 @@ A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção
 - Python: Utilizado para aprendizagem de máguina do algoritmo de predição de alagamentos
 - Javascript: Utilizado para programar o Arduino e sensores
 - Banco de dados: MySQL
-- Servidor: AWS
+- Servidor: Heroku com JawsDB (backend, banco de dados e bot), Netlify (frontend) e Lambda (Python)
 
 ## Documentação
 Para visualizar a documentação completa, verifique a [wiki](https://github.com/PatrickBassan/projetoChuville/wiki/Documenta%C3%A7%C3%A3o) do projeto.
 
 ## Instalação
-`WIP`
-
+Primeiramente clone o repositório e acesse a pasta raíz:
+```
+git clone https://github.com/PatrickBassan/projetoChuville
+cd projetoChuville
+```
+Acesse a pasta do frontend, instale as dependências e então inicie o projeto:
+```
+cd chuville/frontend
+npm install
+npm start
+```
+Faça o mesmo para o backend:
+```
+cd ../backend/api
+npm install
+npm start
+```
+Utilize o Dump20231126.sql que se encontra na pasta raíz do projeto para restaurar o backup do banco de dados.
 ## Uso
+### Ambiente de Produção
 https://main--famous-wisp-98cb91.netlify.app/
-### Página de Consulta de previsões
-![consultar prev](https://github.com/PatrickBassan/projetoChuville/assets/61787168/297173cd-91e7-4631-9f56-1e8c7949c1c8)
-### Página de gestão das previsões
-![remover previsoes](https://github.com/PatrickBassan/projetoChuville/assets/61787168/93d99e6a-36d8-406f-a39b-21e8662e47f2)
 
+#### Página de Consulta de previsões
+<details>
+![chuville-consulta](https://github.com/PatrickBassan/projetoChuville/assets/61787168/951ef132-201f-46e2-9d7e-d382d7ba9901)
+</details>
+#### Página de gestão das previsões
+<details>
+![chuville-grid](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4c040181-3954-4cde-9d9b-981ffe411c9c)
+</details>
+#### Bot do telegram
+<details>
+![chuville-bot](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4925e62c-26bb-48d1-ad9b-3fcbf690c280)
+</details>
 ## Contribuição
 Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki/Guia-de-Contribui%C3%A7%C3%A3o) caso deseje ajudar com o projeto.
 
