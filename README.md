@@ -38,17 +38,14 @@ Utilize o Dump20231126.sql que se encontra na pasta raíz do projeto para restau
 https://main--famous-wisp-98cb91.netlify.app/
 
 #### Página de Consulta de previsões
-<details>
 ![chuville-consulta](https://github.com/PatrickBassan/projetoChuville/assets/61787168/951ef132-201f-46e2-9d7e-d382d7ba9901)
-</details>
+
 #### Página de gestão das previsões
-<details>
 ![chuville-grid](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4c040181-3954-4cde-9d9b-981ffe411c9c)
-</details>
+
 #### Bot do telegram
-<details>
 ![chuville-bot](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4925e62c-26bb-48d1-ad9b-3fcbf690c280)
-</details>
+
 ## Contribuição
 Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki/Guia-de-Contribui%C3%A7%C3%A3o) caso deseje ajudar com o projeto.
 
