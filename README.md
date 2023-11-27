@@ -46,6 +46,9 @@ https://main--famous-wisp-98cb91.netlify.app/
 #### Bot do telegram
 ![chuville-bot](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4925e62c-26bb-48d1-ad9b-3fcbf690c280)
 
+## Sonar Cloud
+https://sonarcloud.io/project/overview?id=PatrickBassan_projetoChuville
+
 ## Contribuição
 Contribuições são bem-vindas, leia o [guia de contribuições](https://github.com/PatrickBassan/projetoChuville/wiki/Guia-de-Contribui%C3%A7%C3%A3o) caso deseje ajudar com o projeto.
 
