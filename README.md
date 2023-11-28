@@ -34,17 +34,11 @@ npm start
 ```
 Utilize o Dump20231126.sql que se encontra na pasta raíz do projeto para restaurar o backup do banco de dados.
 ## Uso
-### Ambiente de Produção
+### Ambiente de Produção para uso da aplicação
 https://main--famous-wisp-98cb91.netlify.app/
 
-#### Página de Consulta de previsões
-![chuville-consulta](https://github.com/PatrickBassan/projetoChuville/assets/61787168/951ef132-201f-46e2-9d7e-d382d7ba9901)
-
-#### Página de gestão das previsões
-![chuville-grid](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4c040181-3954-4cde-9d9b-981ffe411c9c)
-
-#### Bot do telegram
-![chuville-bot](https://github.com/PatrickBassan/projetoChuville/assets/61787168/4925e62c-26bb-48d1-ad9b-3fcbf690c280)
+### Instruções de Uso
+Intruções detalhadas de uso, com demonstrações, podem ser encontradas no [manual](https://github.com/PatrickBassan/projetoChuville/wiki/Instru%C3%A7%C3%B5es-de-Uso).
 
 ## Sonar Cloud
 https://sonarcloud.io/project/overview?id=PatrickBassan_projetoChuville
