@@ -12,7 +12,7 @@ A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção
 - Servidor: Heroku com JawsDB (backend, banco de dados e bot), Netlify (frontend) e Lambda (Python)
 
 ## Versões
-Para evitar problemas ao baixar pacotes, recomendase o uso das seguintes versões:
+Para evitar problemas ao baixar pacotes, é recomendado o uso das seguintes versões:
 - Python v3.9.13
 - Node v18.18.2
 
