@@ -11,6 +11,11 @@ A aplicação Chuville tem o objetivo de facilitar o monitoramento e prevenção
 - Banco de dados: MySQL
 - Servidor: Heroku com JawsDB (backend, banco de dados e bot), Netlify (frontend) e Lambda (Python)
 
+## Versões
+Para evitar problemas ao baixar pacotes, recomendase o uso das seguintes versões:
+- Python v3.9.13
+- Node v18.18.2
+
 ## Documentação
 Para visualizar a documentação completa, verifique a [wiki](https://github.com/PatrickBassan/projetoChuville/wiki/Documenta%C3%A7%C3%A3o) do projeto.
 
